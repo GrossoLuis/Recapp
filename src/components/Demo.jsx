@@ -3,7 +3,13 @@ import React, { useState, useEffect } from "react";
 import { copy, linkIcon, loader, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 
+
+
+
 const Demo = () => {
+
+
+
   const [article, setArticle] = useState({
     url: "",
     summary: "",
@@ -27,23 +33,22 @@ const Demo = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const existingArticle = allArticles.find(
-      (item) => item.url === article.url
-    );
-
+  
+    const existingArticle = allArticles.find((item) => item.url === article.url);
     if (existingArticle) return setArticle(existingArticle);
-
+  
     const { data } = await getSummary({ articleUrl: article.url });
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updatedAllArticles = [newArticle, ...allArticles];
-
+  
       // update state and local storage
       setArticle(newArticle);
       setAllArticles(updatedAllArticles);
       localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
     }
+  
+  
   };
 
   // copy the url and toggle the icon for user feedback
@@ -60,7 +65,7 @@ const Demo = () => {
   };
 
   return (
-    <section className='mt-16 w-full max-w-xl h-screen'>
+    <section className='mt-16 w-full max-w-xl'>
       {/* Search */}
       <div className='flex flex-col w-full gap-2'>
         <form
@@ -121,8 +126,8 @@ const Demo = () => {
           <p className='font-inter font-bold text-black text-center'>
             Resumiendo articulo...
             <br />
-            <span className='font-satoshi font-normal text-gray-700'>
-              Esto no esta permitido
+            <span className='font-satoshi font-normal text-white'>
+              Eso no es una URL
             </span>
           </p>
         ) : (
@@ -131,7 +136,7 @@ const Demo = () => {
               <h2 className='font-satoshi font-bold text-white text-xl'>
                 Articulo <span className='text-violet-500'>Resumen</span>
               </h2>
-              <div className='summary_box'>
+              <div className='summary_box h-full'>
                 <p className='font-inter font-medium text-sm text-white'>
                   {article.summary}
                 </p>
@@ -141,6 +146,7 @@ const Demo = () => {
         )}
       </div>
     </section>
+    
   );
 };
 

@@ -8,7 +8,7 @@ function Hero() {
             <img src={logo} alt="Logo" className="w-28 object-contain" />
 
             <button type="button"
-            onClick={()=> window.open('https://github.com/GrossoLuis')}
+            onClick={()=> window.open('https://github.com/GrossoLuis/Recapp')}
             className="black_btn"
             >
                 Github

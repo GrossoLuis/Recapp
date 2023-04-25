@@ -1,5 +1,6 @@
 import Hero from './components/Hero';
 import Demo from './components/Demo';
+import Footer from './components/Footer';
 
 import './App.css'
 
@@ -7,13 +8,15 @@ const App = () => {
   return (
     <main>
         <div className='main'>
-            <div className='gradient' />
+            <div className='' />
         </div>
-        <div className='app h-full bg-black'>
+        <div className='app bg-black'>
             <Hero />
             <Demo /> 
+            <Footer />
         </div>
     </main>
+    
   )
 }
 
