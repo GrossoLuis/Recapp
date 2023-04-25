@@ -80,7 +80,7 @@ const Demo = () => {
 
           <input
             type='url'
-            placeholder='Paste the article link'
+            placeholder='Pega el link/url del articulo que quieras resumir'
             value={article.url}
             onChange={(e) => setArticle({ ...article, url: e.target.value })}
             onKeyDown={handleKeyDown}
@@ -127,7 +127,7 @@ const Demo = () => {
             Resumiendo articulo...
             <br />
             <span className='font-satoshi font-normal text-white'>
-              Eso no es una URL
+              Eso no es una URL/Link permitido
             </span>
           </p>
         ) : (
