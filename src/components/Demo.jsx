@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { copy, linkIcon, loader, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
+import {IoRefreshOutline} from "react-icons/io5"
 
 
 
@@ -62,6 +63,15 @@ const Demo = () => {
     if (e.keyCode === 13) {
       handleSubmit(e);
     }
+  };
+
+  const handleClearHistory = () => {
+    setAllArticles([]);
+    localStorage.removeItem("articles");
+  };
+
+  const handleRefresh = () => {
+    setArticle({ ...article, summary: "" });
   };
 
   return (
@@ -145,7 +155,18 @@ const Demo = () => {
           )
         )}
       </div>
-    </section>
+      <div className="flex justify-center mt-4 gap-5">
+
+       <button onClick={handleClearHistory} 
+       className="p-2 px-3 flex justify-center items-center rounded-3xl bg-violet-900 text-white font-satoshi hover:bg-white hover:text-violet-800">
+        Limpiar historial
+        </button>  
+        <button onClick={handleRefresh} 
+       className="p-2 px-3 flex justify-center items-center rounded-3xl bg-violet-900 text-white font-satoshi hover:bg-white hover:text-violet-800">
+          <IoRefreshOutline/>
+        </button>        
+      </div>
+    </section> 
     
   );
 };
