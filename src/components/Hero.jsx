@@ -18,7 +18,7 @@ function Hero() {
 
         <h1 className="head_text">
             Resume Articulos con <br className="max-md:hidden" />
-            <span className="orange_gradient">GTP-4</span>
+            <span className="orange_gradient">GPT-4</span>
         </h1>
         <h2 className="desc">
         ¡Atrévete a ahorrar tiempo y leer de forma más eficiente con Recapp! Nuestra innovadora herramienta utiliza la
