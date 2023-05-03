@@ -28,7 +28,7 @@ Abri [http://localhost:3000](http://localhost:3000) en tu navegador para ver los
 
 Podes comenzar a editar la página modificando `src/app.jsx`. La página se actualiza automáticamente a medida que editas el archivo.
 
-## Saber un poco mas
+##Un poco mas de ReactJs
 
 Para obtener más información sobre React.js, echale un vistazo a los siguientes recursos:
 
